@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="png" href="assets/hero.png">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="style.css">
+    <title> Code With Coffee </title>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="#" class="navbar__logo">Code With Coffee</a>
+        <div class="navbar__notch">
+            <p>Home</p>
+            <a href="#">New Courses</a>
+        </div>
+
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776;
+          </div>
+
+        <div class="navbar__menu">
+            <a href="#" class="navbar__menu-link">Join Us</a>
+            <a href="#" class="navbar__menu-link">Courses</a>
+            <a href="#" class="navbar__menu-link">Mentorship</a>
+            <a href="#" class="navbar__menu-link">About</a>
+        </div>
+
+        <div class="modal" id="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeMenu()">&times;</span>
+            <h2 class = "text-logo"> <span id = "red"> Code </span> With Coffee </h2>
+              <a href="#" class="navbar__menu-link">Join Us</a>
+              <a href="#" class="navbar__menu-link">Courses</a>
+              <a href="#" class="navbar__menu-link">Mentorship</a>
+              <a href="#" class="navbar__menu-link">About</a>
+            </div>
+          </div>
+    </nav>
+
+    <section class="hero">
+        <img src="assets/hero.png" alt="Hero Image" class="hero__image">
+        
+        <div class="hero-course">
+            <h1 class="hero-course__title"> Learn Coding / Skills With "Code With Coffee" </h1>
+            <p class="hero-course__author">by - Shahid 06</p>
+            <div class="hero-course__rating">
+                <div class="hero-course__stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star-half'></i>
+                    <i class='bx bx-star'></i>
+                </div>
+                <div class="hero-course__reviews">(2500 reviews)</div>
+            </div>
+            
+            <div class="hero-course__options">
+                <div class="hero-course__mode">
+                    <h3 class="hero-course__label">Select Coding Courses</h3>
+                    <button class="hero-course__mode-option">HTML & CSS</button>
+                    <button class="hero-course__mode-option">JavaScript</button>
+                    <button class="hero-course__mode-option selected">NextJs</button>
+                <span class="disabled"> <button class="hero-course__mode-option">Python</button>
+                    <button class="hero-course__mode-option">Django</button> </span>
+                </div>
+                
+                <div class="hero-course__pricing">
+                    <h3 class="hero-course__label">Price</h3>
+                    <span class="hero-course__price">Free</span>
+                    <span class="hero-course__price-original">$150.00</span>
+                </div>
+
+                <div class="hero-course__actions">
+                    <button class="hero-course__button hero-course__button--enroll">Get Started</button>
+                    <button class="hero-course__button hero-course__button--more">More Details</button>
+                </div>
+                
+            </div>
+            
+        </div>
+        
+    </section>
+
+    <h2 class="separator">Specifications</h2>
+
+    <div class="program">
+        <div class="program__info">
+            <h2 class="program__title">Unlock Your Full Potential</h2>
+            <p class="program__description">
+                Unlock your full potential by embracing the power of learning and growth. Every step you take towards mastering a skill brings you closer to achieving your dreams. Believe in yourself, stay consistent, and explore new possibilities. The key lies in perseverance and a positive mindset. Whether you’re learning to code, exploring new technologies, or building innovative projects, your dedication can turn challenges into opportunities. Empower yourself and unleash the limitless possibilities ahead!
+            </p>
+
+            <div class="program__details">
+                <div class="program__details-duration">
+                    <h3 class="program__label">Course Durations</h3>
+                    <ul class="program__duration-list">
+                        <li class="program__duration-item">1 Month: Fast-Track Intensive</li>
+                        <li class="program__duration-item">3 Months: Standard Learning Path</li>
+                        <li class="program__duration-item">6 Months: In-Depth Exploration</li>
+                        <li class="program__duration-item">1 Year: Comprehensive Mastery</li>
+                    </ul>
+                </div>
+                <div class="program__details-format">
+                    <h3 class="program__label">Course Durations</h3>
+                    <ul class="program__format-list">
+                        <li class="program__format-item">Self-Paced: Study at your own rhythm</li>
+                        <li class="program__format-item">Instructor-Led: Interactive classes with live feedback</li>
+                        <li class="program__format-item">Mentorship: One-on-one guidance</li>
+                        <li class="program__format-item">Bootcamp: Immersive, hands-on experience</li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="program__image">
+            <img src="assets/rear-view-programmer-working-all-night-long_1098-18697.avif" alt="Program Image" class="program__image-photo">
+        </div>
+
+    </div>
+
+    <h2 class="separator">Courses You Might Enjoy</h2>
+
+    <div class="course-list">
+        <div class="course-list__item">
+            <img src="assets/cover.jpg" alt="Course Image" class="course-list__item-image">
+            <div class="course-list__item-details">
+                <h3 class="course-list__item-title">JavaScript Course</h3>
+                <p class="course-list__item-price"><span>from</span> $25</p>
+            </div>
+            <p class="course-list__item-description">
+                Master JavaScript and create interactive websites, dynamic applications, and real-world projects. This course is perfect for beginners and advanced learners seeking hands-on coding expertise!
+            </p>
+            <button class="course-list__item-button">Notify Me</button>
+        </div>
+        <div class="course-list__item">
+            <img src="assets/The-10-Best-Online-Python-Classes-of-2023.jpg" alt="Course Image" class="course-list__item-image">
+            <div class="course-list__item-details">
+                <h3 class="course-list__item-title">Python Course</h3>
+                <p class="course-list__item-price"><span>from</span> $25</p>
+            </div>
+            <p class="course-list__item-description">
+                Learn Python, a versatile and beginner-friendly programming language! Master fundamentals, automate tasks, and build projects like data analysis, web applications, and more. Unlock endless possibilities!
+            </p>
+            <button class="course-list__item-button">Notify Me</button>
+        </div>
+        <div class="course-list__item">
+            <img src="assets/OIP.jpeg" alt="Course Image" class="course-list__item-image">
+            <div class="course-list__item-details">
+                <h3 class="course-list__item-title">NextJs Course</h3>
+                <p class="course-list__item-price"><span>from</span> $25</p>
+            </div>
+            <p class="course-list__item-description">
+                Learn Next.js and build fast, scalable, and SEO-friendly web applications. Master server-side rendering, static site generation, and dynamic routing with hands-on projects and expert guidance!
+            </p>
+            <button class="course-list__item-button">Notify Me</button>
+        </div>
+        <div class="course-list__item">
+            <img src="assets/html_css.jpg" alt="Course Image" class="course-list__item-image">
+            <div class="course-list__item-details">
+                <h3 class="course-list__item-title">HTML & CSS Course</h3>
+                <p class="course-list__item-price"><span>from</span> $25</p>
+            </div>
+            <p class="course-list__item-description">
+                Master HTML and CSS to create responsive, visually stunning websites. Learn page structure, styling, layouts, and modern design techniques. Build professional, mobile-friendly web pages from scratch!
+            </p>
+            <button class="course-list__item-button">Notify Me</button>
+        </div>
+    </div>
+
+    <div class="career">
+        <div class="career__image">
+            <img src="assets/Cross-platform software-pana.png" alt="" class="career__image-photo">
+        </div>
+
+        <div class="career__details">
+            <h2 class="career__title">Achieve Your Career Goals with Expert Support</h2>
+            <p class="career__description">
+                Take the next step toward success with expert guidance designed to help you excel. With personalized support, hands-on learning, and practical strategies, you can master new skills and confidently pursue your career aspirations. Together, we’ll unlock opportunities and transform your ambitions into achievements. Your journey to success starts here!
+            </p>
+
+            <div class="career__benefits">
+                <div class="career__benefit">
+                    <h3 class="career__benefit-title">Personalized Learning</h3>
+                    <p class="career__benefit-description">
+                        Customized curriculum to meet your individual goals.
+                    </p>
+                </div>
+
+                <div class="career__benefit">
+                    <h3 class="career__benefit-title">Global Networking</h3>
+                    <p class="career__benefit-description">
+                        Connect with a community of learners and industry professionals.
+                    </p>
+                </div>
+
+                <div class="career__benefit">
+                    <h3 class="career__benefit-title">Zero Setup Costs</h3>
+                    <p class="career__benefit-description">
+                        Begin without any upfront expenses; all resources are included.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="about">
+        <img src="assets/youtuber image1.jpg" alt="About Image" class="about__image">
+        <div class="about__details">
+            <div class="about__details-title">About the Instructor</div>
+            <div class="about__details-description">
+                Hello! I’m Shahid 06, a dedicated coding instructor with a passion for teaching programming to learners of all levels. With expertise in more than 7 languages, e.g., HTML, CSS, JavaScript, Python, Django, NextJs, I focus on hands-on learning and practical projects to make coding enjoyable and accessible. My goal is to empower students with skills that build confidence and spark creativity, helping them succeed in the ever-evolving tech world. Let’s explore the exciting journey of coding together!
+            </div>
+            <button class="about__details-button">Learn More</button>
+        </div>
+    </div>
+
+
+    <div class="gradient">
+        <div class="subscription">
+            <h2 class="subscription__title">Stay Informed With Our Newsletter</h2>
+            <p class="subscription__description">
+                Sign up to receive insights and updates from our students and experts.
+                Stay connected and discover new ways to enhance your learning experience.
+            </p>
+            <form class="subscription__form">
+                <input type="email" class="subscription__input" placeholder="Enter your email">
+                <button type="submit" class="subscription__button">Subscribe</button>
+            </form>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-links">
+                <div class="footer__branding">
+                    <p class="footer__brand-name">Code With Coffee</p>
+                </div>
+
+                <div class="footer__column">
+                    <a href="#" class="footer__link">Courses</a>
+                    <a href="#" class="footer__link">Mentors</a>
+                    <a href="#" class="footer__link">FAQs</a>
+                    <a href="#" class="footer__link">Contact Us</a>
+                </div>
+
+                <div class="footer__column">
+                    <a href="#" class="footer__link">Blog</a>
+                    <a href="#" class="footer__link">Careers</a>
+                    <a href="#" class="footer__link">Partnerships</a>
+                    <a href="#" class="footer__link">Privacy Policy</a>
+                </div>
+
+                <div class="footer__column">
+                    <a href="#" class="footer__link">Instagram</a>
+                    <a href="#" class="footer__link">Youtube</a>
+                    <a href="#" class="footer__link">Github</a>
+                    <a href="#" class="footer__link">LinkedIn</a>
+                </div>
+
+            </div>
+
+            <p class="footer__copyright">&copy; 2025 Code With Coffee </p>
+
+        </footer>
+
+    </div>
+    
+<script>
+function toggleMenu() {
+  const modal = document.getElementById('modal');
+  modal.classList.toggle('show');
+}
+function closeMenu() {
+  const modal = document.getElementById('modal');
+  modal.classList.remove('show');
+}
+</script>
+</body>
+</html>

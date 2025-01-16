@@ -23,21 +23,21 @@
             &#9776;
           </div>
 
-        <div class="navbar__menu">
-            <a href="#" class="navbar__menu-link">Join Us</a>
-            <a href="#" class="navbar__menu-link">Courses</a>
-            <a href="#" class="navbar__menu-link">Mentorship</a>
+          <div class="navbar__menu">
             <a href="#" class="navbar__menu-link">About</a>
+            <a href="#" class="navbar__menu-link">Courses</a>
+            <a href="#" class="navbar__menu-link">Mentors</a>
+            <a href="Sign-In.html" class="navbar__menu-link">Sign In</a>
         </div>
 
         <div class="modal" id="modal">
             <div class="modal-content">
               <span class="close" onclick="closeMenu()">&times;</span>
-            <h2 class = "text-logo"> <span id = "red"> Code </span> With Coffee </h2>
-              <a href="#" class="navbar__menu-link">Join Us</a>
-              <a href="#" class="navbar__menu-link">Courses</a>
-              <a href="#" class="navbar__menu-link">Mentorship</a>
+              <h2 class = "text-logo"> <span id = "red"> Code </span> With Coffee </h2>
               <a href="#" class="navbar__menu-link">About</a>
+            <a href="#" class="navbar__menu-link">Courses</a>
+            <a href="#" class="navbar__menu-link">Mentors</a>
+            <a href="Sign-In.html" class="navbar__menu-link">Sign In</a>
             </div>
           </div>
     </nav>
@@ -46,7 +46,7 @@
         <img src="assets/hero.png" alt="Hero Image" class="hero__image">
         
         <div class="hero-course">
-            <h1 class="hero-course__title"> Learn Coding / Skills With "Code With Coffee" </h1>
+            <h1 class="hero-course__title"> Learn Coding / Skills With <br class="br"> <span class="typer" data-delay="125" data-words="Code With Coffee,Code With Coffee,Code With Coffee,Code With Coffee"></span> </h1>
             <p class="hero-course__author">by - Shahid 06</p>
             <div class="hero-course__rating">
                 <div class="hero-course__stars">
@@ -272,7 +272,45 @@
         </footer>
 
     </div>
-    
+    <script>
+     function dynamicTyper(element) {
+  const words = element.getAttribute("data-words").split(",");
+  const delay = parseInt(element.getAttribute("data-delay")) || 100; 
+  let wordIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function type() {
+      const currentWord = words[wordIndex];
+      let typingSpeed = delay;
+
+      if (isDeleting) {
+          charIndex--;
+          typingSpeed = delay / 2; 
+      } else {
+          charIndex++;
+      }
+
+      element.textContent = currentWord.substring(0, charIndex);
+
+      if (!isDeleting && charIndex === currentWord.length) {
+          isDeleting = true;
+          typingSpeed = 1000;
+      } 
+      else if (isDeleting && charIndex === 0) {
+          isDeleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+      }
+
+      setTimeout(type, typingSpeed);
+  }
+
+  type();
+}
+const typerElement = document.querySelector(".typer");
+dynamicTyper(typerElement);
+
+    </script>
 <script>
 function toggleMenu() {
   const modal = document.getElementById('modal');

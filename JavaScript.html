@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            height: 100vh;
+        }
+
+  .chapters::-webkit-scrollbar {
+    width: 7px;
+  }
+
+  .chapters::-webkit-scrollbar-thumb {
+    background: #50c9c3;
+    border-radius: 10px;
+  }
+
+  .chapters::-webkit-scrollbar-thumb:hover {
+    background: #4a90e2;
+  }
+
+  .chapter::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+  }
+
+  ::selection {
+    background-color: #22ff00;
+    color: #000;
+  }
+
+  ::-moz-selection {
+    background-color: #22ff00;
+    color: #000;
+  }
+  
+  .container {
+            display: flex;
+            flex: 1;
+        }
+
+        .video-section {
+            flex: 3;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            max-width: 1250px;
+            max-height: 750px;
+            border: none;
+            border-radius: 8px;
+        }
+
+        .chapters {
+            flex: 1;
+            background-color: #111;
+            overflow-y: auto;
+            padding: 10px;
+            max-height: 100%;
+        }
+
+        .chapters h3 {
+            text-align: center;
+            margin: 10px 0;
+        }
+
+        .chapter {
+            padding: 10px;
+            margin: 5px 0;
+            cursor: pointer;
+            border-radius: 4px;
+            background-color: #222;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            transition: background-color 0.3s ease;
+        }
+
+        .chapter:hover {
+            background-color: #333;
+        }
+
+        .chapter a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 14px;
+            display: block;
+            flex: 1;
+        }
+
+        .chapter input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            margin-left: 10px;
+            accent-color: green;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                background-color: #121212;
+            }
+
+            .container {
+                flex-direction: column;
+            }
+
+            .video-section {
+                position: sticky;
+                padding: 5px;
+            }
+
+            iframe {
+                max-width: 100%;
+                max-height: 250px;
+                border: 2px solid #333;
+            }
+
+            .chapters {
+                flex: none;
+                height: auto;
+                padding: 15px;
+                border-top: 2px solid #333;
+            }
+
+            .chapters h3 {
+                font-size: 18px;
+                color: #ffffff;
+                margin-bottom: 15px;
+                text-transform: uppercase;
+            }
+
+            .chapter {
+                display: column;
+                text-align: left;
+                margin: 10px 0;
+                background: linear-gradient(45deg, #333, #444);
+                padding: 15px;
+                box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            }
+
+            .chapter:hover {
+                background: linear-gradient(45deg, #444, #555);
+            }
+
+            .chapter a {
+                font-size: 16px;
+                font-weight: bold;
+                color: #ffffff;
+            }
+
+            .chapter input[type="checkbox"] {
+                width: 25px;
+                height: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="video-section">
+            <iframe id="video-player" src="https://www.youtube.com/embed/Hr5iLG7sUa0" allowfullscreen></iframe>
+        </div>
+
+        <div class="chapters">
+            <h3>Syllabus</h3>
+            <div id="chapter-list"></div>
+        </div>
+    </div>
+
+    <script>
+        const chapters = [
+            { title: "Introduction to JavaScript", videoId: "Hr5iLG7sUa0" },
+            { title: "Setting up environment in local machine", videoId: "cvoLc3deAdQ" },
+            { title: "Save and work on Github for JavaScript", videoId: "-GoKoR6aLcY" },
+            { title: "Let, Const & Var", videoId: "yY0bKZNYmJs" },
+            { title: "Datatypes and ECMA standards", videoId: "-9knnv97wSc" },
+            { title: "Datatypes conversion confusion", videoId: "X7hDBhd_L5U" },
+            { title: "Why string to number conversion is confusing", videoId: "N9el4APFtAo" },
+            { title: "Comparison of datatypes in JavaScript", videoId: "giP2uXMlv4c" },
+            { title: "Datatypes of JavaScript summary", videoId: "suMvZWjjKbo" },
+            { title: "Stack & Heap memory", videoId: "7gwc-1czolw" },
+            { title: "Strings", videoId: "fozwNnFunlo" },
+            { title: "Number & Maths", videoId: "_KqpeDc47Ro" },
+            { title: "Date & Time", videoId: "tGLCuoumaGY" },
+            { title: "Array", videoId: "cejBux2gtEE" },
+            { title: "Array part-2", videoId: "m6azhgyCi-k" },
+            { title: "Objects", videoId: "vVYOHmqQDCU" },
+            { title: "Objects part-2", videoId: "4lb2pXWWXJI" },
+            { title: "Object de-structure & JSON API intro", videoId: "AViTh83k-IE" },
+            { title: "Function & Parameter", videoId: "Bn56WahG_t0" },
+            { title: "Functions with objects & array", videoId: "t7ZHPhgdA4U" },
+        ];
+
+        const chapterList = document.getElementById('chapter-list');
+        const videoPlayer = document.getElementById('video-player');
+
+        const savedData = JSON.parse(localStorage.getItem('classData')) || {
+            runningChapter: chapters[0].videoId,
+            completedChapters: []
+        };
+
+        videoPlayer.src = `https://www.youtube.com/embed/${savedData.runningChapter}`;
+
+        chapters.forEach((chapter, index) => {
+            const chapterDiv = document.createElement('div');
+            chapterDiv.className = 'chapter';
+
+            const chapterLink = document.createElement('a');
+            chapterLink.href = "#";
+            chapterLink.textContent = `${index + 1}. ${chapter.title}`;
+            chapterLink.addEventListener('click', () => {
+                videoPlayer.src = `https://www.youtube.com/embed/${chapter.videoId}`;
+                savedData.runningChapter = chapter.videoId;
+                localStorage.setItem('classData', JSON.stringify(savedData));
+            });
+
+            const checkBox = document.createElement('input');
+            checkBox.type = 'checkbox';
+            checkBox.checked = savedData.completedChapters.includes(chapter.videoId);
+            checkBox.addEventListener('change', () => {
+                if (checkBox.checked) {
+                    savedData.completedChapters.push(chapter.videoId);
+                } else {
+                    savedData.completedChapters = savedData.completedChapters.filter(id => id !== chapter.videoId);
+                }
+                localStorage.setItem('classData', JSON.stringify(savedData));
+            });
+
+            chapterDiv.appendChild(chapterLink);
+            chapterDiv.appendChild(checkBox);
+
+            chapterList.appendChild(chapterDiv);
+        });
+    </script>
+</body>
+</html>

@@ -14,9 +14,9 @@
             display: flex;
             height: 100vh;
         }
-
+@media (min-width: 999px) {
   .chapters::-webkit-scrollbar {
-    width: 7px;
+    width: 5px;
   }
 
   .chapters::-webkit-scrollbar-thumb {
@@ -31,7 +31,7 @@
   .chapter::-webkit-scrollbar-track {
     background: #f1f1f1;
     border-radius: 10px;
-  }
+  }}
 
   ::selection {
     background-color: #22ff00;
@@ -42,7 +42,7 @@
     background-color: #22ff00;
     color: #000;
   }
-  
+
   .container {
             display: flex;
             flex: 1;
@@ -125,7 +125,8 @@
 
             iframe {
                 max-width: 100%;
-                max-height: 250px;
+                height: 250px;
+                max-height: 225px;
                 border: 2px solid #333;
             }
 
@@ -140,6 +141,7 @@
                 font-size: 18px;
                 color: #ffffff;
                 margin-bottom: 15px;
+                margin-top: 3px;
             }
 
             .chapter {
@@ -202,6 +204,21 @@
             { title: "Object de-structure & JSON API intro", videoId: "AViTh83k-IE" },
             { title: "Function & Parameter", videoId: "Bn56WahG_t0" },
             { title: "Functions with objects & array", videoId: "t7ZHPhgdA4U" },
+            { title: "Global & local scope", videoId: "cHHU0jXfjKY" },
+            { title: "Scope level & mini hoisting", videoId: "eWwge2YpHhc" },
+            { title: "This & arrow function", videoId: "9ksqBa8_txM" },
+            { title: "Immediately Invoked Function Expressions IIFE", videoId: "GAIbn16Iytc" },
+            { title: "How does JavaScript execute code + call stack", videoId: "ByhtOgF6uYM" },
+            { title: "Control flow in Javascript (one shot)", videoId: "0P_YvC6Gg0c" },
+            { title: "For loop with break & continue", videoId: "Y1cpFsXrEgY" },
+            { title: "While & do while loop", videoId: "w3Q55-l47P0" },
+            { title: "High order array loops", videoId: "M0YImBHQsWU" },
+            { title: "Filter map & reduce", videoId: "9MfwYoWKKVE" },
+            { title: "DOM introduction", videoId: "DcjNkHtDj8A" },
+            { title: "All DOM selectors NodeList & HTMLCollection", videoId: "Ab6K57WjWTE" },
+            { title: "How to create a new element in Dom", videoId: "xAvTgCsCHLs" },
+            { title: "Edit & remove element in DOM", videoId: "VQlY-X_eeTE" },
+            { title: "Let's build 4 JavaScript project for beginners", videoId: "EGqHVjU-fas" },
         ];
 
         const chapterList = document.getElementById('chapter-list');

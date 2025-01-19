@@ -34,6 +34,7 @@
 
           <div class="modal" id="modal">
             <div class="modal-content">
+            <span class="close" onclick="closeMenu()">&times;</span>
               <h2 class = "text-logo"> <span id = "red"> Code </span> With Coffee </h2>
             <a href="#about" class="navbar__menu-link">About</a>
             <a href="#courses" class="navbar__menu-link">Courses</a>
@@ -286,16 +287,20 @@ dynamicTyper(typerElement);
 
     </script>
 <script>
+ function toggleMenu() {
  function toggleMenu(event) {
   const modal = document.getElementById('modal');
-
+  modal.classList.toggle('show');
+}
+function closeMenu() {
+  const modal = document.getElementById('modal');
+  modal.classList.remove('show');
   if (!modal.contains(event.target)) {
     modal.classList.toggle('show');
   }
 }
-
 document.addEventListener('click', toggleMenu);
-
+}
 </script>
 </body>
 </html>

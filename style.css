@@ -7,6 +7,10 @@
     font-family: "Open Sans", sans-serif;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body{
     align-items: center;
     justify-content: center;
@@ -158,9 +162,7 @@ img{
     transition: all 0.3s ease;
 }
 
-.navbar__menu-link:hover,
-.hero-course__mode-option.selected,
-.hero-course__duration-option.selected{
+.navbar__menu-link:hover{
     background: #edefde;
     border-color: transparent;
 }
@@ -197,15 +199,6 @@ img{
   
   .modal-content {
     padding: 20px;
-  }
-  
-  .close {
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-    position: absolute;
-    top: 10px;
-    right: 20px;
   }
   
   .modal .navbar__menu-link {
@@ -267,7 +260,6 @@ img{
 }
 
 .hero-course__mode-option,
-.hero-course__duration-option,
 .hero-course__button{
     padding: 0.4rem 1rem;
     margin-left: 0rem;
@@ -280,7 +272,6 @@ img{
 }
 
 .hero-course__mode-option:hover,
-.hero-course__duration-option:hover,
 .hero-course__button:hover{
     background: #f7f7f7;
 }
@@ -421,13 +412,8 @@ img{
 }
 
 .course-list__item-title,
-.course-list__item-price{
+.course-list__item-members{
     font-weight: 600;
-}
-
-.course-list__item-price span{
-    font-size: 0.8rem;
-    font-weight: 500;
 }
 
 .course-list__item-description{
@@ -752,7 +738,8 @@ img{
 
     .text-logo {
         color: #fff;
-        margin-bottom: 25px;
+        margin-bottom: 20px;
+        margin-top: -25px;
     }
 
     #red {
@@ -870,9 +857,7 @@ img{
         transition: all 0.3s ease;
     }
     
-    .navbar__menu-link:hover,
-    .hero-course__mode-option.selected,
-    .hero-course__duration-option.selected{
+    .navbar__menu-link:hover{
         background: #edefde;
         border-color: transparent;
     }
@@ -979,7 +964,6 @@ img{
     }
     
     .hero-course__mode-option,
-    .hero-course__duration-option,
     .hero-course__button{
         padding: 0.4rem 1rem;
         margin-left: 0rem;
@@ -992,7 +976,6 @@ img{
     }
     
     .hero-course__mode-option:hover,
-    .hero-course__duration-option:hover,
     .hero-course__button:hover{
         background: #f7f7f7;
     }
@@ -1133,13 +1116,9 @@ img{
     }
     
     .course-list__item-title,
-    .course-list__item-price{
+    .course-list__item-members{
         font-weight: 600;
-    }
-    
-    .course-list__item-price span{
-        font-size: 0.8rem;
-        font-weight: 500;
+        text-align: center;
     }
     
     .course-list__item-description{

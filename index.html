@@ -288,18 +288,12 @@ dynamicTyper(typerElement);
     </script>
 <script>
  function toggleMenu() {
- function toggleMenu(event) {
   const modal = document.getElementById('modal');
   modal.classList.toggle('show');
 }
 function closeMenu() {
   const modal = document.getElementById('modal');
   modal.classList.remove('show');
-  if (!modal.contains(event.target)) {
-    modal.classList.toggle('show');
-  }
-}
-document.addEventListener('click', toggleMenu);
 }
 </script>
 </body>

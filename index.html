@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="canonical" href="https://code-with-coffee.netlify.app/index.html" />
     <link rel="shortcut icon" type="png" href="assets/hero.png">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
     <title> Code With Coffee </title>
 </head>
 
@@ -31,9 +32,8 @@
             <a href="#" class="navbar__menu-link">Sign In</a>
         </div>
 
-        <div class="modal" id="modal">
+          <div class="modal" id="modal">
             <div class="modal-content">
-              <span class="close" onclick="closeMenu()">&times;</span>
               <h2 class = "text-logo"> <span id = "red"> Code </span> With Coffee </h2>
             <a href="#about" class="navbar__menu-link">About</a>
             <a href="#courses" class="navbar__menu-link">Courses</a>
@@ -65,7 +65,7 @@
                     <h3 class="hero-course__label">Select Coding Courses</h3>
                     <button class="hero-course__mode-option">HTML & CSS</button>
         <a href="JavaScript.html"> <button class="hero-course__mode-option">JavaScript</button> </a>
-                    <button class="hero-course__mode-option selected">NextJs</button>
+                    <button class="hero-course__mode-option">NextJs</button>
                 <span class="disabled"> <button class="hero-course__mode-option">Python</button>
                     <button class="hero-course__mode-option">Django</button> </span>
                 </div>
@@ -132,7 +132,7 @@
             <img src="assets/html_css.jpg" alt="Course Image" class="course-list__item-image">
             <div class="course-list__item-details">
                 <h3 class="course-list__item-title">HTML & CSS Course</h3>
-                <p class="course-list__item-price"><span>from</span> $25</p>
+                <p class="course-list__item-members"> <i class="fas fa-user text-success me-3" style="margin-right: 3px;"> </i> 1000 </p>
             </div>
             <p class="course-list__item-description">
                 Master HTML and CSS to create responsive, visually stunning websites. Learn page structure, styling, layouts, and modern design techniques. Build professional, mobile-friendly web pages from scratch!
@@ -143,7 +143,7 @@
             <img src="assets/cover.jpg" alt="Course Image" class="course-list__item-image">
             <div class="course-list__item-details">
                 <h3 class="course-list__item-title">JavaScript Course</h3>
-                <p class="course-list__item-price"><span>from</span> $0</p>
+                <p class="course-list__item-members"> <i class="fas fa-user text-success me-3" style="margin-right: 3px;"> </i> 1250 </p>
             </div>
             <p class="course-list__item-description">
                 Master JavaScript and create interactive websites, dynamic applications, and real-world projects. This course is perfect for beginners and advanced learners seeking hands-on coding expertise!
@@ -154,7 +154,7 @@
             <img src="assets/The-10-Best-Online-Python-Classes-of-2023.jpg" alt="Course Image" class="course-list__item-image">
             <div class="course-list__item-details">
                 <h3 class="course-list__item-title">Python Course</h3>
-                <p class="course-list__item-price"><span>from</span> $25</p>
+                <p class="course-list__item-members"> <i class="fas fa-user text-success me-3" style="margin-right: 3px;"> </i> 1500 </p>
             </div>
             <p class="course-list__item-description">
                 Learn Python, a versatile and beginner-friendly programming language! Master fundamentals, automate tasks, and build projects like data analysis, web applications, and more. Unlock endless possibilities!
@@ -165,7 +165,7 @@
             <img src="assets/OIP.jpeg" alt="Course Image" class="course-list__item-image">
             <div class="course-list__item-details">
                 <h3 class="course-list__item-title">NextJs Course</h3>
-                <p class="course-list__item-price"><span>from</span> $25</p>
+                <p class="course-list__item-members"> <i class="fas fa-user text-success me-3" style="margin-right: 3px;"> </i> 2500 </p>
             </div>
             <p class="course-list__item-description">
                 Learn Next.js and build fast, scalable, and SEO-friendly web applications. Master server-side rendering, static site generation, and dynamic routing with hands-on projects and expert guidance!
@@ -286,14 +286,16 @@ dynamicTyper(typerElement);
 
     </script>
 <script>
-function toggleMenu() {
+ function toggleMenu(event) {
   const modal = document.getElementById('modal');
-  modal.classList.toggle('show');
+
+  if (!modal.contains(event.target)) {
+    modal.classList.toggle('show');
+  }
 }
-function closeMenu() {
-  const modal = document.getElementById('modal');
-  modal.classList.remove('show');
-}
+
+document.addEventListener('click', toggleMenu);
+
 </script>
 </body>
 </html>
